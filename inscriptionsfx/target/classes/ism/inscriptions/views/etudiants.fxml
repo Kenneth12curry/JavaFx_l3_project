@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="710.0" prefWidth="1088.0" style="-fx-background-color: whitesmoke;" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ism.inscriptions.controllers.EtudiantsController">
+   <children>
+      <Pane fx:id="pnInscription" layoutX="-1.0" layoutY="161.0" prefHeight="550.0" prefWidth="347.0" style="-fx-background-color: #F2F2F2 #F2F2F2;">
+         <children>
+            <Text layoutX="10.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Données  étudiants">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Text>
+            <Pane fx:id="pnEtudiant" layoutX="14.0" layoutY="79.0" prefHeight="223.0" prefWidth="244.0" style="-fx-background-color: #F2F2F2 #F2F2F2;">
+               <children>
+                  <TextField fx:id="txtNomComplet" layoutX="12.0" layoutY="29.0" prefHeight="25.0" prefWidth="197.0" promptText="nom et prénom" />
+                  <Text fill="#060707" layoutX="11.0" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" text="nom et prénom">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#272828" layoutX="10.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tuteur">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="txtTuteur" layoutX="12.0" layoutY="84.0" prefHeight="14.0" prefWidth="199.0" promptText="tuteur" />
+                  <TextField fx:id="txtlibelle" layoutX="11.0" layoutY="141.0" prefHeight="25.0" prefWidth="200.0" promptText="libelle" />
+                  <Text fill="#101111" layoutX="12.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Libellé de la classe">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <TextField fx:id="txtDate" layoutX="117.0" layoutY="348.0" prefHeight="25.0" prefWidth="183.0" promptText="date inscription" />
+            <Text fill="#141414" layoutX="13.0" layoutY="312.0" strokeType="OUTSIDE" strokeWidth="0.0" text="annee inscription">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Text>
+            <TextField fx:id="txtFiliere" layoutX="117.0" layoutY="410.0" prefHeight="24.0" prefWidth="185.0" promptText="filière étudiant" />
+            <Text fill="#141414" layoutX="22.0" layoutY="374.0" strokeType="OUTSIDE" strokeWidth="0.0" text="date inscription">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Text>
+            <Text fill="#141414" layoutX="26.0" layoutY="428.0" strokeType="OUTSIDE" strokeWidth="0.0" text="filière étudiant">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Text>
+            <Button layoutX="213.0" layoutY="466.0" mnemonicParsing="false" onAction="#handleCreerInscription" prefHeight="25.0" prefWidth="101.0" text="Enregistrer" textFill="#fcf8f8" />
+            <TextField fx:id="txtAnneeInscription" layoutX="116.0" layoutY="292.0" prefHeight="26.0" prefWidth="185.0" promptText="annee inscription" />
+         </children>
+      </Pane>
+      <Pane layoutX="706.0" layoutY="11.0" prefHeight="413.0" prefWidth="361.0" style="-fx-background-color: #F2F2F2 #F2F2F2;">
+         <children>
+            <Text fill="#1d1d1e" layoutX="99.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liste des Classes">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <TableView fx:id="tblvClasse" layoutX="15.0" layoutY="106.0" prefHeight="252.0" prefWidth="331.0">
+              <columns>
+                <TableColumn fx:id="tblcId" prefWidth="80.7464599609375" text="ID" />
+                <TableColumn fx:id="tblcFiliere" prefWidth="128.47186279296875" text="FILIERE" />
+                  <TableColumn fx:id="tblcLibelle" prefWidth="120.52813720703125" text="LIBELLE" />
+              </columns>
+            </TableView>
+         </children>
+      </Pane>
+      <Pane fx:id="pnRsc" layoutX="362.0" layoutY="159.0" prefHeight="551.0" prefWidth="349.0" style="-fx-background-color: #F2F2F2 #F2F2F2 #F2F2F2 #F2F2F2;">
+         <children>
+            <TextField fx:id="txtMatriculeEtudiant" layoutX="62.0" layoutY="79.0" prefHeight="25.0" prefWidth="167.0" promptText="matricule " />
+            <Button layoutX="258.0" layoutY="78.0" mnemonicParsing="false" onAction="#handleRechercherEtudiant" prefHeight="25.0" prefWidth="63.0" text="OK" textFill="#f8f4f4" />
+            <Text fill="#202122" layoutX="59.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="matricule">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Text>
+            <TextField fx:id="txtDate1" layoutX="112.0" layoutY="343.0" prefHeight="25.0" prefWidth="212.0" promptText="date inscription" />
+            <TextField fx:id="txtAnneeInscription1" layoutX="117.0" layoutY="285.0" prefHeight="28.0" prefWidth="205.0" promptText="annee inscription" />
+            <Text fill="#141414" layoutX="5.0" layoutY="304.0" strokeType="OUTSIDE" strokeWidth="0.0" text="annee inscription">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Text>
+            <Text fill="#141414" layoutX="14.0" layoutY="360.0" strokeType="OUTSIDE" strokeWidth="0.0" text="date inscription">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Text>
+            <Button layoutX="208.0" layoutY="415.0" mnemonicParsing="false" onAction="#handleCreerRsc" prefHeight="25.0" prefWidth="113.0" text="Enregistrer" textFill="#fcf8f8" />
+            <Text layoutX="107.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Données  étudiants">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Text>
+            <TextField fx:id="txtNomComplet1" layoutX="117.0" layoutY="166.0" prefHeight="25.0" prefWidth="204.0" promptText="nom et prénom" />
+            <Text fill="#060707" layoutX="30.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" text="nom et prénom">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Text>
+            <Text fill="#272828" layoutX="43.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tuteur">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Text>
+            <TextField fx:id="txtTuteur1" layoutX="118.0" layoutY="224.0" prefHeight="25.0" prefWidth="203.0" promptText="tuteur" />
+         </children>
+      </Pane>
+      <Pane layoutX="3.0" layoutY="4.0" prefHeight="143.0" prefWidth="645.0" style="-fx-background-color: #F2F2F2 #F2F2F2 #F2F2F2 #F2F2F2;">
+         <children>
+            <RadioButton fx:id="radioInscription" layoutX="73.0" layoutY="81.0" mnemonicParsing="false" onAction="#isInsc" text="inscriptions">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="radType" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="radioRsc" layoutX="265.0" layoutY="82.0" mnemonicParsing="false" onAction="#isRsc" text="réincriptions" toggleGroup="$radType">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </RadioButton>
+            <Text layoutX="51.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Veuillez séléctionner une action">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

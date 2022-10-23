@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="545.0" prefWidth="777.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ism.inscriptions.controllers.ListerEtudiantsClasseController">
+   <children>
+      <BorderPane prefHeight="548.0" prefWidth="779.0" stylesheets="@../style/style.css">
+         <top>
+            <Pane prefHeight="124.0" prefWidth="779.0" style="-fx-background-color: whitesmoke;" BorderPane.alignment="CENTER">
+               <children>
+                  <TextField fx:id="txtLibelle" layoutX="163.0" layoutY="81.0" prefHeight="25.0" prefWidth="286.0" promptText="libelle" />
+                  <Button layoutX="465.0" layoutY="81.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="81.0" style="-fx-background-color: #031de5#031de5;" text="OK" textFill="#fcfafa" />
+                  <Text fill="#131314" layoutX="290.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Données étudiants">
+                     <font>
+                        <Font size="15.0" />
+                     </font></Text>
+                  <Text layoutX="163.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Libellé de la classe">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Text>
+               </children>
+            </Pane>
+         </top>
+         <center>
+            <Pane prefHeight="260.0" prefWidth="645.0" style="-fx-background-color: whitesmoke;" BorderPane.alignment="CENTER">
+               <children>
+                  <TableView fx:id="tblvEtudiants" layoutX="26.0" layoutY="55.0" prefHeight="355.0" prefWidth="725.0">
+                    <columns>
+                      <TableColumn fx:id="tblcId" prefWidth="110.84049606323242" text="ID" />
+                      <TableColumn fx:id="tblcNomComplet" prefWidth="205.8404998779297" text="NOM ET PRÉNOM" />
+                        <TableColumn fx:id="tblcMatricule" prefWidth="202.64913940429688" text="MATRICULE" />
+                        <TableColumn fx:id="tblcTuteur" prefWidth="204.0" text="TUTEUR" />
+                    </columns>
+                  </TableView>
+                  <FontAwesomeIconView fill="#044ffd" glyphName="USERS" layoutX="346.0" layoutY="41.0" size="40" />
+               </children>
+            </Pane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
